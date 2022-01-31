@@ -1,10 +1,12 @@
-package service;
+package com.example.DEMO.service;
 
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Service;
 
-import dao.PersonDao;
-import model.Person;
+import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import com.example.DEMO.dao.PersonDao;
+import com.example.DEMO.model.Person;
 
 @Service
 public class PersonService {
@@ -16,7 +18,7 @@ public class PersonService {
 		this.personDao = personDao;
 	}
 
-
+	@PostMapping
 	public int addPerson(Person person) {
 		return personDao.insertPerson(person);
 	}

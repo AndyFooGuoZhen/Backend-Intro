@@ -49,6 +49,37 @@ Next, add qualifier name next to @Repository tag in Dao
 
 Next, go to controller class
 add @Autowired to top of constructor too
+add @RestController on top of class
+add @PostMapping on top of method that will actually send information to service , then to DAO
+
+
+Next define JSONproperty at model class
+EXAMPLE:
+public Person(@JsonProperty("id") UUID id, @JsonProperty("name")String name) {
+		
+		this.id = id;
+		this.name = name;
+	}
+
+
+Add @RequestBody to addperson in controller class
+EXAMPLE
+public void addPerson(@RequestBody Person person) {
+		personService.addPerson(person);
+	}
+
+Add @RestController and @RequestMapping to top of class 
+	(and insert link after base url)
+EXAMPLE
+
+
+@RequestMapping("api/v1/person")
+@RestController
+public class PersonController {
+
+	private final PersonService personService;
+
+
 
 
 

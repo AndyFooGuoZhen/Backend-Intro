@@ -1,8 +1,9 @@
-package dao;
+package com.example.DEMO.dao;
 
 import java.util.UUID;
 
-import model.Person;
+
+import com.example.DEMO.model.Person;
 
 public interface PersonDao {
 
