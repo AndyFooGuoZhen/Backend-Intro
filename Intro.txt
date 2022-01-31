@@ -1,0 +1,54 @@
+//Link for springboot tutorial video
+https://www.youtube.com/watch?v=vtPkZShrvXQ&t=494s
+
+GO to start.spring.io
+Choose JAVA version and name
+Go to dependencies and select Spring web starter
+Click generate , a zip file will be downloaded
+
+Open Eclipse --> file --> import --> existing maven --> open demo folder
+Go to src --> main --> .com .example--> demo
+
+//////////////////////////////////////////////////////////////////
+General flow of data
+
+Controller/api layer --> services--> DAO
+
+////////////////////////////////////////////////////////////////
+Create 4 packages
+
+Api
+	Adds a person to service
+Model
+	Models a person, attributes of a person (Person.java)
+Service
+	Adds a person to DAO
+DAO (database)
+	Adds a person to a list 
+
+////////////////////////////////////////////////////////////
+Dependency injection
+
+Since Services and Dao are not instantiated, we have no way of accessing them
+
+Add @Repository to the last DAO class (just above the public class)
+Add @Service to the service class
+
+Then, link service constructor by adding @Autowire on top
+
+Qualifier allows linking to database (DAO)
+
+Also add the @Qualifier to constructor
+EX:
+	public PersonService(@Qualifier("fakeDao") PersonDao personDao) {
+		this.personDao = personDao;
+	}
+
+Next, add qualifier name next to @Repository tag in Dao
+@Repository("fakeDao")
+
+Next, go to controller class
+add @Autowired to top of constructor too
+
+
+
