@@ -80,6 +80,26 @@ public class PersonController {
 	private final PersonService personService;
 
 
+@GetMapping get request
+
+@PathVariable indicates that the current variable can be obtained from the url
+//Remember to add path = "{pathVariableName}"
+
+EX
+@GetMapping(path = "{id}")
+	public Person getPersonById(@PathVariable ("id") UUID id) {
+		return personService.getPersonById(id)
+				.orElse(null);
+	}
+
+Original url to get all person objects
+localhost:8080/api/v1/person
+
+To get a person with specific id
+localhost:8080/api/v1/person/id of that person
+
+
+
 
 
 
