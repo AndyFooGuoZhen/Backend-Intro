@@ -99,6 +99,16 @@ To get a person with specific id
 localhost:8080/api/v1/person/id of that person
 
 
+//////////////////////////////////////////
+Exporting to executable .jar file
+
+right click on project and run as maven install
+navigate to target folder and run in terminal
+type java then enter
+type java -jar <file of .jar file> and hit enter
+	TIP: type the front of .jar file and hit tab for auto completer
+
+
 
 
 
